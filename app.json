@@ -1,0 +1,21 @@
+{
+  "name": "Chatbot-Insta",
+  "description": "instagram bot build with nodejs",
+  "repository": "https://github.com/Awesome-Tofu/instagram-chatbot",
+  "logo": "https://telegra.ph/file/405979b25d6f5047ff355.jpg",
+  "keywords": ["nodejs", "bot", "instagram bot", "instagram automation", "multi device"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    }
+  ],
+   "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
