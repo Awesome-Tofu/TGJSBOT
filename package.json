@@ -1,0 +1,18 @@
+{
+  "name": "tgjsbot",
+  "version": "1.0.0",
+  "description": "I'm learning to make a nodejs tg bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node src/index.js"
+  },
+  "author": "Tofu",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "i": "^0.3.7",
+    "node-telegram-bot-api": "^0.58.0",
+    "npm": "^8.18.0"
+  }
+}
