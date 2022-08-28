@@ -13,8 +13,6 @@ bot.on('message', (message) => {
   var isvideo = message.sticker.is_video;
   var emoji = message.sticker.emoji;
   
-  console.log(message);
-  
   bot.sendMessage(chat_id, "Sticker ID: " + sticker);
   bot.sendMessage(chat_id, "Unique Sticker ID: " + unique_sticker);
   bot.sendMessage(chat_id, "Is Animated: " + isanimated);
