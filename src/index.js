@@ -1,6 +1,5 @@
 const telegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
-const chatbot = require("node-fetch").default;
 
 const TOKEN = process.env.BOT_TOKEN;
 
