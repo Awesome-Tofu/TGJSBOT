@@ -1,6 +1,7 @@
+
 const telegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
-const axios = require("axios");
+const {Configuration, OpenAIApi} = require('openai')
 
 const TOKEN = process.env.BOT_TOKEN;
 
@@ -27,7 +28,15 @@ bot.onText(/\/help/,(msg)=>{
 
 
 bot.onText(/\/gene/, (msg) => {
-    bot.sendMessage(msg.chat.id,"Please wait....");
+     let chat_id = msg.from.id;
+    const inputmsg= msg.text;
+  let inputArray = inputmsg.split(" ");
+  let message="";
+  if(inputArray.length==1){
+    console.log("Please input the text/query!");
+  }else{
+      bot.sendMessage(chat_id, "Please wait...");
+  }
 })
 
 
@@ -41,18 +50,24 @@ bot.onText(/\/gene/, (msg) => {
   }else{
      inputArray.shift();
      message=inputArray.join(" ");
-
-
-     var apikey=process.env.API;
-     axios.get(`https://openairestapi.vercel.app/image?text=${message}&api=${apikey}`)
-     .then(response => {
-
-         bot.sendPhoto(chat_id, response.data.image_url, {caption:message})
-       })
-       .catch(error => {
-        console.log(error)
-         bot.sendMessage(err+"\n\n Please contact t.me/awesome_tofu");
-       });
+      var apikey=process.env.API;
+    // bot.sendMessage(chat_id,message);
+      const config = new Configuration({
+        apiKey: apikey
+    });
+    const openai = new OpenAIApi(config);
+    const response = openai.createImage({
+        prompt: message,
+        n: 1,
+        size: "1024x1024",
+      });
+      response.then((data)=>{
+        const image= data.data.data[0].url;
+        bot.sendPhoto(chat_id,image, {caption:message});
+      }).catch((err) => {
+          console.log("sed error"+err);
+        bot.sendMessage("\n\n Please contact t.me/awesome_tofu");
+    });
   }
   
 });
