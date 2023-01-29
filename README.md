@@ -1,117 +1,53 @@
-# Welcome to <%= projectName %> 👋
-<% if (isProjectOnNpm) { -%>
-[![Version](https://img.shields.io/npm/v/<%= projectName %>.svg)](https://www.npmjs.com/package/<%= projectName %>)
-<% } -%>
-<% if (projectVersion && !isProjectOnNpm) { -%>
-![Version](https://img.shields.io/badge/version-<%= projectVersion %>-blue.svg?cacheSeconds=2592000)
-<% } -%>
-<% if (projectPrerequisites) { -%>
-<% projectPrerequisites.map(({ name, value }) => { -%>
-![Prerequisite](https://img.shields.io/badge/<%= name %>-<%= encodeURIComponent(value) %>-blue.svg)
-<% }) -%>
-<% } -%>
-<% if (projectDocumentationUrl) { -%>
-[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](<%= projectDocumentationUrl %>)
-<% } -%>
-<% if (isGithubRepos) { -%>
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](<%= repositoryUrl %>/graphs/commit-activity)
-<% } -%>
-<% if (licenseName) { -%>
-[![License: <%= licenseName %>](https://img.shields.io/<%= isGithubRepos ? `github/license/${authorGithubUsername}/${projectName}` : `badge/License-${licenseName}-yellow.svg` %>)](<%= licenseUrl ? licenseUrl : '#' %>)
-<% } -%>
-<% if (authorTwitterUsername) { -%>
-[![Twitter: <%= authorTwitterUsername %>](https://img.shields.io/twitter/follow/<%= authorTwitterUsername %>.svg?style=social)](https://twitter.com/<%= authorTwitterUsername %>)
-<% } -%>
-<% if (projectDescription) { -%>
+# TELEGRAM JAVASCRIPT BOT 👋
+A telegram Robot. This bot uses OpenAI API to process Output.
 
-> <%= projectDescription %>
-<% } -%>
-<% if (projectHomepage) { -%>
 
-### 🏠 [Homepage](<%= projectHomepage %>)
-<% } -%>
-<% if (projectDemoUrl) { -%>
+### 🤖 Example Bot
 
-### ✨ [Demo](<%= projectDemoUrl %>)
-<% } -%>
-<% if (projectPrerequisites && projectPrerequisites.length) { -%>
+[ᴀᴋɪ ʜᴀʏᴀᴋᴀᴡᴀ](https://t.me/Aki_Image_UltraBot)
 
-## Prerequisites
+## Made with
 
-<% projectPrerequisites.map(({ name, value }) => { -%>
-- <%= name %> <%= value %>
-<% }) -%>
-<% } -%>
-<% if (installCommand) { -%>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="100" height="100" />
 
-## Install
+## LOCAL DEPLOY
 
 ```sh
-<%= installCommand %>
+ git clone https://github.com/Awesome-Tofu/TGJSBOT.git
 ```
-<% } -%>
-<% if (usage) { -%>
-
-## Usage
-
+Clone The Repo and
+fill .env file with your information.
 ```sh
-<%= usage %>
+ npm install
 ```
-<% } -%>
-<% if (testCommand) { -%>
-
-## Run tests
-
+Install node modules.
 ```sh
-<%= testCommand %>
+ npm start
 ```
-<% } -%>
-<% if (authorName || authorTwitterUsername || authorGithubUsername) { -%>
+start the Bot
 
-## Author
-<% if (authorName) { %>
-👤 **<%= authorName %>**
-<% } %>
-<% if (authorWebsite) { -%>
-* Website: <%= authorWebsite %>
-<% } -%>
-<% if (authorTwitterUsername) { -%>
-* Twitter: [@<%= authorTwitterUsername %>](https://twitter.com/<%= authorTwitterUsername %>)
-<% } -%>
-<% if (authorGithubUsername) { -%>
-* GitHub: [@<%= authorGithubUsername %>](https://github.com/<%= authorGithubUsername %>)
-<% } -%>
-<% if (authorLinkedInUsername) { -%>
-* LinkedIn: [@<%= authorLinkedInUsername %>](https://linkedin.com/in/<%= authorLinkedInUsername %>)
-<% } -%>
-<% } -%>
-<% if (issuesUrl) { -%>
+
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check [issues page](<%= issuesUrl %>). <%= contributingUrl ? `You can also take a look at the [contributing guide](${contributingUrl}).` : '' %>
-<% } -%>
+Feel free to check [issues page](https://github.com/Awesome-Tofu/TGJSBOT/issues).
 
 ## Show your support
 
-Give a ⭐️ if this project helped you!
-<% if (authorPatreonUsername) { -%>
+Give a ⭐️ if this project helped you!<br>
+support me
 
-[![support us](https://img.shields.io/badge/become-a patreon%20us-orange.svg?cacheSeconds=2592000)](https://www.patreon.com/<%= authorPatreonUsername %>)
-<% } -%>
+<p><a href="https://www.buymeacoffee.com/aditya6313"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="aditya6313" /></a><a href="https://ko-fi.com/awesometofu"> <img align="left" src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="awesometofu" /></a></p><br>
 
-<% if (licenseName && licenseUrl) { -%>
 
 ## 📝 License
 
-<% if (authorName && authorGithubUsername) { -%>
-Copyright © <%= currentYear %> [<%= authorName %>](https://github.com/<%= authorGithubUsername %>).
+Copyright © 2023 [Tofu](https://github.com/awesome-tofu).
 
 <% } -%>
 This project is [<%= licenseName %>](<%= licenseUrl %>) licensed.
 <% } -%>
 
 ***
-<%- include('footer.md'); -%>
