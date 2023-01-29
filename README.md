@@ -1,4 +1,4 @@
-# TELEGRAM JAVASCRIPT BOT 👋
+# TELEGRAM JAVASCRIPT BOT 
 A telegram Robot. This bot uses OpenAI API to process Output.
 
 
